@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="product" *ngIf="product">
+    <div class="product__img">
+      <img [src]="product.imgUrl" alt="" />
+    </div>
+    <div class="product__body">
+      <h2 class="product__title">
+        {{ product.title }}
+      </h2>
+      <p class="product__price">{{ product.price }} тг</p>
+      <button class="product__btn" (click)="addToBasket()">
+        Купить сейчас
+      </button>
+      <p class="product__description">
+        {{ product.description }}
+      </p>
+    </div>
+  </div>
+</div>

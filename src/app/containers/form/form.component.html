@@ -1,0 +1,25 @@
+<form class="example-form" [formGroup]="checkoutForm" (submit)="sendForm()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      placeholder="Ex. pat@example.com"
+    />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Phone number</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="phoneNumber"
+      placeholder="+7 (777) 123 11 22"
+    />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Name</mat-label>
+    <input type="text" matInput formControlName="name" placeholder="Fill" />
+  </mat-form-field>
+  <button mat-raised-button color="primary">Send</button>
+</form>

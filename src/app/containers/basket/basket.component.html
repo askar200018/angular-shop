@@ -1,0 +1,31 @@
+<div class="basket">
+  <div class="basket__header">
+    <h1 class="basket__title">Shopping Cart</h1>
+  </div>
+  <div class="products" *ngIf="basketProducts">
+    <div class="product" *ngFor="let basketProduct of basketProducts">
+      <div class="product__img">
+        <img [src]="basketProduct.product.imgUrl" alt="" />
+      </div>
+      <h3 class="product__title">{{ basketProduct.product.title }}</h3>
+      <p class="product__price">
+        Price: {{ basketProduct.product.price }} тг (x{{ basketProduct.count }})
+      </p>
+      <div class="product__button">
+        <button
+          class="product__btn"
+          (click)="removeFromBasket(basketProduct.product.id)"
+        >
+          Remove
+        </button>
+      </div>
+      <div class="product__total">
+        Total: {{ basketProduct.product.price * basketProduct.count }} тг
+      </div>
+    </div>
+  </div>
+  <div class="checkout">
+    <p class="checkout__text">Total: {{ calculateTotal() }} тг</p>
+    <button class="checkout__btn" (click)="checkout()">Checkout</button>
+  </div>
+</div>
